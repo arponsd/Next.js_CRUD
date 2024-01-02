@@ -4,13 +4,16 @@ import Image from 'next/image';
 
 const DrinksList = ({drinks}:any) => {
   return (
-    <ul className='menu menu-vertical pl-0'>
+    <ul className='grid sm:grid-cols-2 gap-6 mt-6'>
         {drinks.map((drink: any) => {
-           return <li key={drink.idDrink}>
+          return <li key={drink.idDrink}>
             <Link href={`/drinks/${drink.idDrink}`} className='text-xl font-medium'>
+              <div className="relative h-48 mb-4">
+                <Image className='rounded-lg object-cover' alt='' src={drink.strDrinkThumb} fill sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw'/>
+              </div>
                 {drink.strDrink}
             </Link>
-           </li>
+          </li>
         })}
     </ul>
   )
