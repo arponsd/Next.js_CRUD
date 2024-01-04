@@ -14,5 +14,5 @@ model Task {
   id String @id @default(uuid())
   content String
   createdAt DateTime @default(now())
-  compled Boolean @default(false)
+  completed Boolean @default(false)
 }
